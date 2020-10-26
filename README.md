@@ -8,7 +8,7 @@ Run `yarn build` to get a optimised production build.
 
 ### Conditions to be applied for Leap Year
 
-* not divisible by 4
+* not divisible by 4 are not leap years
 * divisible by 4 and not by 100
 * divisible by 400
 * divisible by 100 and not 400

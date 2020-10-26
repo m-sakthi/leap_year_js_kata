@@ -16,9 +16,12 @@ export default class LeapYearForm extends Component {
 
   validateLeapYear = () => {
     const { year } = this.state;
+
+    this.setState({ isLeap: (year % 4 === 0) });
   }
 
   render() {
+    const { year, isLeap } = this.state;
 
     return (
       <div data-testid="leapYearForm">
@@ -37,7 +40,7 @@ export default class LeapYearForm extends Component {
         />
         <br />
         <span data-testid="leapYearResult">
-          {`Entered year ${this.state.year}`}
+          {`Entered year ${year} is ${isLeap ? '' : 'not '}a Leap year.`}
         </span>
 
       </div>

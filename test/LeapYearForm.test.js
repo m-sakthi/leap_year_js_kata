@@ -48,13 +48,15 @@ describe('LeapYearForm', () => {
       submitBtn = component.find(validateBtnQuery);
     });
 
-    it("should set the entered year", () => {
+    it("should set the entered year and check if it a divisible by 4", () => {
       const year = 2020;
 
       yearInputEle.prop('onChange')({ target: { value: year } });
 
-      expect(component.find(resultSpanQuery).text()).toEqual(`Entered year 2020`);
-    })
+      submitBtn.prop('onClick')();
+
+      expect(component.find(resultSpanQuery).text()).toEqual(`Entered year 2020 is a Leap year.`);
+    });
 
   });
 
