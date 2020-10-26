@@ -5,24 +5,42 @@ export default class LeapYearForm extends Component {
     super(props);
 
     this.state = {
-      year: ''
+      year: '',
+      isLeap: false
     }
   }
 
+  setEnteredYear = (e) => {
+    this.setState({ year: e.target.value });
+  }
+
+  validateLeapYear = () => {
+    const { year } = this.state;
+  }
+
   render() {
+
     return (
-      <form testId="leapYearForm">
+      <div data-testid="leapYearForm">
+
         <label>Enter year:</label>
         <input
-          testId="leapYearFormEnterYear"
-          type="number" />
+          data-testid="leapYearFormEnterYear"
+          type="number"
+          onChange={this.setEnteredYear} />
         <br />
         <input
-          testId="leapYearFormSubmit"
-          type="submit"
-          name="Validate"
-          value="validate" />
-      </form>
+          data-testid="leapYearFormSubmit"
+          type="button"
+          value="validate"
+          onClick={this.validateLeapYear}
+        />
+        <br />
+        <span data-testid="leapYearResult">
+          {`Entered year ${this.state.year}`}
+        </span>
+
+      </div>
     )
   }
 }

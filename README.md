@@ -4,4 +4,11 @@ Run `yarn install` to install the dependencies. The app will open in the default
 
 Run `yarn start` to start the Webpack dev server
 
-Run `yarn build` to get a optimised production build. 
+Run `yarn build` to get a optimised production build.
+
+### Conditions to be applied for Leap Year
+
+* not divisible by 4
+* divisible by 4 and not by 100
+* divisible by 400
+* divisible by 100 and not 400

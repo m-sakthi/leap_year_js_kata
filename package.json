@@ -25,6 +25,7 @@
   "homepage": "https://github.com/msv300/leap_year_js_kata#readme",
   "devDependencies": {
     "@babel/core": "^7.12.3",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.1",
     "babel-jest": "^26.6.1",
