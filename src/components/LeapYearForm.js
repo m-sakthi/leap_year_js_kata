@@ -5,13 +5,16 @@ export default class LeapYearForm extends Component {
     super(props);
 
     this.state = {
-      year: '',
-      isLeap: false
+      year: 0,
+      isLeap: false,
+      error: 'Enter a year'
     }
   }
 
+  validateEnteredYear = () => this.state.year <= 0;
+
   setEnteredYear = (e) => {
-    this.setState({ year: e.target.value });
+    this.setState({ year: e.target.value, error: null });
   }
 
   divisibleBy4 = () => (this.state.year % 4 === 0);
@@ -23,11 +26,15 @@ export default class LeapYearForm extends Component {
   isALeapYear = () => this.divisibleBy400() || this.divisbileBy4AndNotBy100();
 
   validateLeapYear = () => {
-    this.setState({ isLeap: this.isALeapYear()});
+    if (this.validateEnteredYear()) {
+      this.setState({ error: 'Enter valid year.' });
+    } else {
+      this.setState({ isLeap: this.isALeapYear(), error: null });
+    }
   }
 
   render() {
-    const { year, isLeap } = this.state;
+    const { year, isLeap, error } = this.state;
 
     return (
       <div data-testid="leapYearForm">
@@ -46,7 +53,7 @@ export default class LeapYearForm extends Component {
         />
         <br />
         <span data-testid="leapYearResult">
-          {`Entered year ${year} is ${isLeap ? '' : 'not '}a Leap year.`}
+          {error ? error : `Entered year ${year} is ${isLeap ? '' : 'not '}a Leap year.`}
         </span>
 
       </div>

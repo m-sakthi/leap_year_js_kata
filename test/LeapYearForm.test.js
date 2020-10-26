@@ -98,6 +98,16 @@ describe('LeapYearForm', () => {
       expect(component.find(resultSpanQuery).text()).toEqual(`Entered year ${year} is not a Leap year.`);
     });
 
+    it("should check for a valid year i.e., positive year", () => {
+      const year = -2100;
+
+      yearInputEle.prop('onChange')({ target: { value: year } });
+
+      submitBtn.prop('onClick')();
+
+      expect(component.find(resultSpanQuery).text()).toEqual(`Enter valid year.`);
+    });
+
   });
 
 });
