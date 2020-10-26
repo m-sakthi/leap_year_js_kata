@@ -14,10 +14,14 @@ export default class LeapYearForm extends Component {
     this.setState({ year: e.target.value });
   }
 
-  validateLeapYear = () => {
-    const { year } = this.state;
+  divisibleBy4 = () => (this.state.year % 4 === 0);
 
-    this.setState({ isLeap: (year % 4 === 0) });
+  divisbileBy4AndNotBy100 = () => this.divisibleBy4() && (this.state.year % 100 !== 0);
+
+  isALeapYear = () => this.divisbileBy4AndNotBy100();
+
+  validateLeapYear = () => {
+    this.setState({ isLeap: this.isALeapYear()});
   }
 
   render() {

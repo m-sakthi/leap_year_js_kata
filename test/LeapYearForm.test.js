@@ -55,7 +55,27 @@ describe('LeapYearForm', () => {
 
       submitBtn.prop('onClick')();
 
-      expect(component.find(resultSpanQuery).text()).toEqual(`Entered year 2020 is a Leap year.`);
+      expect(component.find(resultSpanQuery).text()).toEqual(`Entered year ${year} is a Leap year.`);
+    });
+
+    it("should check if it a divisible by 4 and not by 100", () => {
+      const non_leap_year = 2016;
+
+      yearInputEle.prop('onChange')({ target: { value: non_leap_year } });
+
+      submitBtn.prop('onClick')();
+
+      expect(component.find(resultSpanQuery).text()).toEqual(`Entered year ${non_leap_year} is a Leap year.`);
+    });
+
+    it("should check if not divisible by 4 and nor by 100 is not a leap year", () => {
+      const non_leap_year = 2015;
+
+      yearInputEle.prop('onChange')({ target: { value: non_leap_year } });
+
+      submitBtn.prop('onClick')();
+
+      expect(component.find(resultSpanQuery).text()).toEqual(`Entered year ${non_leap_year} is not a Leap year.`);
     });
 
   });
