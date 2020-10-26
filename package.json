@@ -1,0 +1,46 @@
+{
+  "name": "leap_year_js_kata",
+  "version": "1.0.0",
+  "description": "Find Leap year using ReactJs - Kata based approach",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --open --mode development",
+    "build": "webpack --mode production",
+    "test": "jest test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msv300/leap_year_js_kata.git"
+  },
+  "keywords": [
+    "leapyear",
+    "kata",
+    "reactjs"
+  ],
+  "author": "Sakthivel M <msv300@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/msv300/leap_year_js_kata/issues"
+  },
+  "homepage": "https://github.com/msv300/leap_year_js_kata#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
+    "babel-jest": "^26.6.1",
+    "babel-loader": "^8.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "html-loader": "^1.3.2",
+    "html-webpack-plugin": "^4.5.0",
+    "jest": "^26.6.1",
+    "react-test-renderer": "^17.0.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
